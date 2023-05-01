@@ -17,6 +17,8 @@ spring:
           uri: lb://profile-service
           predicates:
             - Path=/api/v1/profile/**
+          filters:
+            - AuthFilter
 
 
 eureka:
