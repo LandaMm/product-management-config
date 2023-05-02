@@ -19,6 +19,18 @@ spring:
             - Path=/api/v1/profile/**
           filters:
             - AuthFilter
+        - id: chat-service
+          uri: lb://chat-service
+          predicates:
+            - Path=/api/v1/chats/**
+          filters:
+            - AuthFilter
+        - id: message-service
+          uri: lb://message-service
+          predicates:
+            - Path=/api/v1/messages/**
+          filters:
+            - AuthFilter
 
 
 eureka:
